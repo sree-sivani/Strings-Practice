@@ -22,8 +22,12 @@ class SubSequence {
         String s1 = sc.next();
         String s2 = sc.next();
 
-        int j = 0; // Pointer for `s2`
 
+        if(s2.length() > s1.length()){
+            System.out.println("Sub Sequence Not Found");
+        }else{
+        int j = 0; // Pointer for `s2`
+        
         // Iterate through `s1` while ensuring we don't exceed the length of `s2`
         for (int i = 0; i < s1.length() && j < s2.length(); i++) {
             if (s1.charAt(i) == s2.charAt(j)) { // If characters match
@@ -40,7 +44,7 @@ class SubSequence {
             System.out.println(j); // Debugging information: how many characters matched
             System.out.println("Sub Sequence Not Found");
         }
-
+        }
         sc.close(); // Close the scanner to prevent resource leaks
     }
 }
